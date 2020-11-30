@@ -1,0 +1,26 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  namespace: test1
+  name: argo-demo
+  labels:
+    app: argo-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: argo-demo
+  template:
+    metadata:
+      labels:
+        app: argo-demo
+    spec:
+      containers:
+      - name: whoami-v1
+        image: fluxcd/flux:1.21.0
+        ports:
+        - name: web
+          containerPort: 80
+      imagePullSecrets:
+      - name: login-harbor
