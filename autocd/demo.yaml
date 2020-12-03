@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: whoami-v1
-        image: harbor.baixue.fun/flux/fluxcd-test1:v3
+        image: nginx:1.14.2
         ports:
         - name: web
           containerPort: 80
