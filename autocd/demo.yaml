@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: whoami-v1
-        image: fluxcd/flux:1.21.0
+        image: nginx:1.14.2
         ports:
         - name: web
           containerPort: 80
